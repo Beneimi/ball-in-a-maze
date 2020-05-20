@@ -1,6 +1,9 @@
 package View.GUI;
 
+import Dao.GameDao;
+import Dao.SavedGame;
 import Model.Game;
+import com.google.gson.Gson;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,24 +14,24 @@ import java.awt.*;
 
 public class Application extends javafx.application.Application {
 
-    private static Game activeGame;
-
-    public static Game GetActiveGame(){
-        return activeGame;
-    }
-
-    public static Game InitializeNewGame(Point start,Point goal){
-        Application.activeGame = new Game(8,start,goal);
-        activeGame.SetWall(new Point(4,4),new Point(3,4));
-        activeGame.SetWall(new Point(0,1),new Point(0,2));
-        activeGame.SetWall(new Point(5,3),new Point(5,4));
-
-
-        return  activeGame;
-    }
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        SavedGame activeGame = new SavedGame();
+        activeGame.setName("first level");
+        activeGame.setGame(new Game(8,new Point(1,1),new Point(7,7)));
+        activeGame.getGame().SetWall(new Point(4,4),new Point(3,4));
+        activeGame.getGame().SetWall(new Point(0,1),new Point(0,2));
+        activeGame.getGame().SetWall(new Point(5,3),new Point(5,4));
+
+        //GameDao gd =new GameDao();
+        //gd.SaveGame(activeGame);
+
+        //Gson gson = new Gson();
+
+        //System.out.println( gson.toJson(activeGame) );
+
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("menu/menu.fxml"));
         stage.setScene(new Scene(root,600,600));
         stage.show();

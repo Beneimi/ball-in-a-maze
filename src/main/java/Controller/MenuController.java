@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.awt.*;
+
 import java.io.IOException;
 
 public class MenuController {
@@ -15,6 +15,7 @@ public class MenuController {
     public Button startButton;
     public Button highscoreButton;
     public Button exitButton;
+    private FXMLLoader fxmlLoader;
 
 
     public void handleHighscoreButton() throws IOException {

@@ -4,8 +4,10 @@ import Model.Game;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.ArrayUtils;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
@@ -24,17 +26,17 @@ public class GameDao {
 
 
     private String ReadFile() throws IOException{
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get("savedGames/saved.json"), Charset.forName("utf-8"))) {
+        try (BufferedReader reader = Files.newBufferedReader(Path.of(getClass().getResource("/savedGames/saved.json").toURI()))) {
             return reader.lines().collect(Collectors.joining());
-        } catch (IOException x) {
+        } catch (IOException | URISyntaxException x) {
             throw new IOException();
         }
     }
 
     private void WriteFile(String content) throws IOException{
-        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get("savedGames/saved.json"), Charset.forName("utf-8"))) {
+        try (BufferedWriter writer = Files.newBufferedWriter(Path.of(getClass().getResource("/savedGames/saved.json").toURI()))) {
             writer.write(content);
-        } catch (IOException x) {
+        } catch (IOException | URISyntaxException x) {
             throw new IOException();
         }
     }

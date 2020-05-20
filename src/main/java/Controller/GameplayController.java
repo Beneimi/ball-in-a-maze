@@ -5,14 +5,19 @@ import Model.Tile;
 import View.GUI.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import lombok.Setter;
 
-
+import java.io.IOException;
 
 
 public class GameplayController {
@@ -20,14 +25,17 @@ public class GameplayController {
     @FXML
     public GridPane grid;
 
+    @Setter
     private Game game;
-
-
-    //private Game game = new Game(8,);
-
+/*
+    @FXML
+    private void initialize(){
+        Draw();
+    }*/
 
     public void SetGame(Game game){
         this.game = game;
+        Draw();
     }
 
     public void Draw(){
@@ -76,53 +84,25 @@ public class GameplayController {
         }
     }
 
-    public void Draw2(){
-        Game game = Application.GetActiveGame();
-        BorderPane b;
-        Tile t;
-        for(int i = 0; i < grid.getChildren().size(); i++){
-            b = (BorderPane)grid.getChildren().get(i);
-            t = game.getBoard().GetTile(GridPane.getRowIndex(b), GridPane.getColumnIndex(b));
-            if (t.isDown()) {
-                b.getBottom().setStyle("-fx-background-color: black");
-            }
-            if (t.isUp()) {
-                b.getTop().setStyle("-fx-background-color: black");
-            }
-            if (t.isLeft()) {
-                b.getLeft().setStyle("-fx-background-color: black");
-            }
-            if (t.isRight()) {
-                b.getRight().setStyle("-fx-background-color: black");
-            }
-            if (t.isGoal()) {
-                b.getCenter().setStyle("-fx-background-color: chartreuse");
-            }
-            else if(GridPane.getRowIndex(b) == game.getBallPosition().x
-                    && GridPane.getColumnIndex(b) == game.getBallPosition().y){
-                b.getCenter().setStyle("-fx-background-color: coral");
-            }else {
-                b.getCenter().setStyle("-fx-background-color: white");
-            }
-        }
-    }
 
-    public void handleBackButton(ActionEvent actionEvent) {
-        this.Draw();
+    public void handleBackButton(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("menu/menu.fxml"));
+        stage.setScene(new Scene(root,600,600));
     }
 
     public void handleKeyPress(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.S){
-            Application.GetActiveGame().MoveBall(Game.DIRECTION.DOWN);
+            game.MoveBall(Game.DIRECTION.DOWN);
         }
         if (keyEvent.getCode() == KeyCode.W){
-            Application.GetActiveGame().MoveBall(Game.DIRECTION.UP);
+            game.MoveBall(Game.DIRECTION.UP);
         }
         if (keyEvent.getCode() == KeyCode.A){
-            Application.GetActiveGame().MoveBall(Game.DIRECTION.LEFT);
+            game.MoveBall(Game.DIRECTION.LEFT);
         }
         if (keyEvent.getCode() == KeyCode.D){
-            Application.GetActiveGame().MoveBall(Game.DIRECTION.RIGHT);
+            game.MoveBall(Game.DIRECTION.RIGHT);
         }
 
         this.Draw();

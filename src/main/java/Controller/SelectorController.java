@@ -2,8 +2,8 @@ package Controller;
 
 import Dao.GameDao;
 import Dao.SavedGame;
-import Model.Game;
-import View.GUI.Application;
+
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import java.awt.Point;
+
 import java.io.IOException;
 
 public class SelectorController {
@@ -23,12 +23,15 @@ public class SelectorController {
     @FXML
     public ListView<String> levelList;
 
-    private Game selectedGame;
+    private FXMLLoader fxmlLoader;
 
+    private SavedGame[] savedGames = {};
+
+    @FXML
     private void initialize(){
         ObservableList<String> levelNames = FXCollections.observableArrayList();
         GameDao gd = new GameDao();
-        SavedGame[] savedGames = {};
+
         try {
             savedGames = gd.GetGames();
         }catch (IOException ex){
@@ -40,14 +43,27 @@ public class SelectorController {
         }
 
         levelList.setItems(levelNames);
+        levelList.refresh();
     }
 
     public void handleStartButton() throws IOException {
-        Stage stage = (Stage)this.start.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/gameplay.fxml"));
-        stage.setScene(new Scene(root,640,670));
 
-        Application.InitializeNewGame(new Point(2,2),new Point(4,4));
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/gameplay.fxml"));
+        Parent root = fxmlLoader.load();
+
+        for (SavedGame sg: savedGames){
+            if(sg.getName() == levelList.getSelectionModel().getSelectedItem()){
+                fxmlLoader.<GameplayController>getController().SetGame(sg.getGame());
+            }
+        }
+
+
+
+        Stage stage = (Stage)this.start.getScene().getWindow();
+        stage.setScene(new Scene(root,640,670));
+        stage.show();
+
     }
 
 }
