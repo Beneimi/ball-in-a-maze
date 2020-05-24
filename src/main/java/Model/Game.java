@@ -4,8 +4,11 @@ package Model;
 import lombok.Getter;
 
 import java.awt.*;
-import java.security.InvalidParameterException;
 
+
+/***
+ * Class that represents a gamestate.
+ */
 public class Game {
 
     public enum DIRECTION{
@@ -26,38 +29,46 @@ public class Game {
         this.ballPosition = start;
     }
 
-    public void SetWall(Point tile1, Point tile2){
+    /***
+     * Sets up a wall between the given tiles.
+     * @param tile1 Coordinates of a tile given as <code>java.awt.Point</code>
+     * @param tile2 Coordinates of a tile given as <code>java.awt.Point</code>
+     * @throws IllegalArgumentException is thrown when the given coordinates are not valid
+     */
+    public void setWall(Point tile1, Point tile2){
+        if(tile1.x >= board.getSize() || tile2.x >= board.getSize() || tile1.y >= board.getSize() || tile2.y >= board.getSize()){
+            throw new IllegalArgumentException();
+        }
         if(tile1.x == tile2.x){
             if ( tile2.y -1 == tile1.y ){
-                this.board.GetTile(tile1).setRight(true);
-                this.board.GetTile(tile2).setLeft(true);
+                this.board.getTile(tile1).setRight(true);
+                this.board.getTile(tile2).setLeft(true);
             }
             else if( tile2.y +1 == tile1.y ){
-                this.board.GetTile(tile1).setLeft(true);
-                this.board.GetTile(tile2).setRight(true);
+                this.board.getTile(tile1).setLeft(true);
+                this.board.getTile(tile2).setRight(true);
             }else{
-                throw new InvalidParameterException();
+                throw new IllegalArgumentException();
             }
         }else if(tile1.y == tile2.y){
             if ( tile2.x -1 == tile1.x ){
-                this.board.GetTile(tile2).setUp(true);
-                this.board.GetTile(tile1).setDown(true);
+                this.board.getTile(tile2).setUp(true);
+                this.board.getTile(tile1).setDown(true);
             }
             else if ( tile2.x +1 == tile1.x){
-                this.board.GetTile(tile2).setDown(true);
-                this.board.GetTile(tile1).setUp(true);
+                this.board.getTile(tile2).setDown(true);
+                this.board.getTile(tile1).setUp(true);
             }else{
-                throw new InvalidParameterException();
+                throw new IllegalArgumentException();
             }
         }
         else {
-            throw new InvalidParameterException();
+            throw new IllegalArgumentException();
         }
-
     }
 
     /***
-     * Moves the ball into the given direction until it hits a wall
+     * Moves the ball into the given direction until it hits a wall.
      * @param dir The direction of the movement
      * @return The new position of the ball
      */
@@ -65,22 +76,22 @@ public class Game {
 
         switch (dir) {
             case UP:
-                while (!this.board.GetTile(ballPosition).isWall(dir)){
+                while (!this.board.getTile(ballPosition).isWall(dir)){
                     ballPosition.x--;
                 }
                 break;
             case DOWN:
-                while (!this.board.GetTile(ballPosition).isWall(dir)){
+                while (!this.board.getTile(ballPosition).isWall(dir)){
                     ballPosition.x++;
                 }
                 break;
             case LEFT:
-                while (!this.board.GetTile(ballPosition).isWall(dir)){
+                while (!this.board.getTile(ballPosition).isWall(dir)){
                     ballPosition.y--;
                 }
                 break;
             case RIGHT:
-                while (!this.board.GetTile(ballPosition).isWall(dir)){
+                while (!this.board.getTile(ballPosition).isWall(dir)){
                     ballPosition.y++;
                 }
                 break;
@@ -88,16 +99,15 @@ public class Game {
         return this.ballPosition;
     }
 
+    /***
+     * Returns if a ball is in the goal position or not.
+     * @return <code>True</code> if the ball is in a goal position, <code>False</code> if it is not
+     */
     public boolean GoalReached(){
-        if(this.board.GetTile(this.ballPosition).isGoal()){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.board.getTile(this.ballPosition).isGoal();
     }
 
-    public Tile GetTile(Point p){
-        return this.board.GetTile(p);
+    public Tile getTile(int x, int y){
+        return this.board.getTile(new Point(x,y));
     }
 }

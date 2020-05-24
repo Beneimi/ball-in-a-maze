@@ -43,26 +43,29 @@ public class SelectorController {
         }
 
         levelList.setItems(levelNames);
+        levelList.getSelectionModel().select(0);
         levelList.refresh();
     }
 
     public void handleStartButton() throws IOException {
 
-        fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/gameplay.fxml"));
-        Parent root = fxmlLoader.load();
+        if(levelList.getSelectionModel().getSelectedItem() != null){
+            fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/gameplay.fxml"));
+            Parent root = fxmlLoader.load();
 
-        for (SavedGame sg: savedGames){
-            if(sg.getName() == levelList.getSelectionModel().getSelectedItem()){
-                fxmlLoader.<GameplayController>getController().SetGame(sg.getGame());
+            for (SavedGame sg: savedGames){
+                if(sg.getName() == levelList.getSelectionModel().getSelectedItem()){
+                    fxmlLoader.<GameplayController>getController().SetGame(sg.getGame());
+                    fxmlLoader.<GameplayController>getController().SetName(sg.getName());
+                }
             }
+
+            Stage stage = (Stage)this.start.getScene().getWindow();
+            stage.setScene(new Scene(root,640,670));
+            stage.show();
         }
 
-
-
-        Stage stage = (Stage)this.start.getScene().getWindow();
-        stage.setScene(new Scene(root,640,670));
-        stage.show();
 
     }
 

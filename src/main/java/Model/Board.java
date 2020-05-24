@@ -4,6 +4,9 @@ import lombok.Getter;
 
 import java.awt.Point;
 
+/***
+ * Class representing a game board.
+ */
 public class Board {
     private Tile[][] board;
 
@@ -33,11 +36,7 @@ public class Board {
         this.board[goal.x][goal.y].setGoal(true);
     }
 
-    public Tile GetTile(Point p){
+    public Tile getTile(Point p){
         return this.board[p.x][p.y];
-    }
-
-    public Tile GetTile(int x, int y){
-        return this.board[x][y];
     }
 }

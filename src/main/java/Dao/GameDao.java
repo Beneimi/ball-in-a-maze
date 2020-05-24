@@ -5,10 +5,8 @@ import com.google.gson.Gson;
 import org.apache.commons.lang3.ArrayUtils;
 import java.io.*;
 import java.net.URISyntaxException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
 public class GameDao {
@@ -19,9 +17,9 @@ public class GameDao {
         return gson.fromJson( ReadFile(), SavedGame[].class);
     }
 
-    public void SaveGame(SavedGame game) throws IOException {
+    public void SaveGame(String name, Game game) throws IOException {
         SavedGame[] savedGames = GetGames();
-        WriteFile( gson.toJson(ArrayUtils.add(savedGames,game)) );
+        WriteFile( gson.toJson(ArrayUtils.add(savedGames,new SavedGame(game,name))) );
     }
 
 

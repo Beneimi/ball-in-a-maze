@@ -10,31 +10,52 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
-import lombok.Setter;
 
+import java.awt.Point;
 import java.io.IOException;
 
-
-public class GameplayController {
-
-    @FXML
-    public GridPane grid;
+public class LevelEditorController {
 
     @FXML
     public TextField levelName;
+    @FXML
+    GridPane grid;
 
-    @Setter
-    private Game game;
+    Popup popup = new Popup();
 
-    public void SetGame(Game game){
-        this.game = game;
-        Update();
+    private Game game = new Game(8,new Point(0,0),new Point(7,7));
+    private Node selected;
+
+
+    public void handleMouseClick(MouseEvent mouseEvent) {
+        Node clickedNode = mouseEvent.getPickResult().getIntersectedNode();
+        if (selected == null){
+            selected = clickedNode;
+            selected.setStyle("-fx-background-color: gray");
+        }
+        else {
+            // TODO: 2020. 05. 24. fix popup 
+            try {
+                game.setWall(new Point(GridPane.getRowIndex(selected), GridPane.getColumnIndex(selected)),
+                        new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
+            }catch (IllegalArgumentException ex){
+                popup.getContent().add(new Label("Can't place a wall like that"));
+                popup.show(levelName.getScene().getWindow());
+            }
+
+
+            selected.setStyle("-fx-background-color: white");
+            selected = null;
+            this.Update();
+        }
     }
 
     public void Update(){
@@ -81,25 +102,7 @@ public class GameplayController {
                 sp.setStyle("-fx-background-color: white");
             }
         }
-
-        if(this.game.GoalReached()){
-            this.loadLevelComplete();
-        }
     }
-
-    private void loadLevelComplete(){
-
-        Stage stage = (Stage) levelName.getScene().getWindow();
-        Parent root = null;
-        // TODO: 2020. 05. 24. properly handle exception
-        try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/levelComplete.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setScene(new Scene(root,600,600));
-    }
-
 
     public void handleBackButton(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -107,34 +110,15 @@ public class GameplayController {
         stage.setScene(new Scene(root,600,600));
     }
 
-    public void handleKeyPress(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.S){
-            game.MoveBall(Game.DIRECTION.DOWN);
-        }
-        if (keyEvent.getCode() == KeyCode.W){
-            game.MoveBall(Game.DIRECTION.UP);
-        }
-        if (keyEvent.getCode() == KeyCode.A){
-            game.MoveBall(Game.DIRECTION.LEFT);
-        }
-        if (keyEvent.getCode() == KeyCode.D){
-            game.MoveBall(Game.DIRECTION.RIGHT);
-        }
-
-        this.Update();
-    }
-
     public void handleSaveButton(ActionEvent actionEvent) {
         GameDao gd = new GameDao();
 
+        // TODO: 2020. 05. 24. handle exception properly 
         try {
             gd.SaveGame(this.levelName.getText(),this.game);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-    public void SetName(String name) {
-        this.levelName.setText(name);
-    }
 }
+

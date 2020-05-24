@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="680.0" prefWidth="680.0" stylesheets="@../styles/levelEditor.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LevelEditorController">
+    <children>
+        <GridPane fx:id="grid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="640.0" scaleX="1" scaleY="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="0">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+                <StackPane maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" onMouseClicked="#handleMouseClick" prefHeight="80.0" prefWidth="80.0" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                    <children>
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_LEFT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="80.0" maxWidth="10.0" minHeight="80.0" minWidth="10.0" prefHeight="80.0" prefWidth="10.0" styleClass="wall" StackPane.alignment="TOP_RIGHT" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="TOP_CENTER" />
+                        <StackPane mouseTransparent="true" alignment="TOP_LEFT" maxHeight="10.0" maxWidth="80.0" minHeight="10.0" minWidth="80.0" prefHeight="10.0" prefWidth="80.0" styleClass="wall" StackPane.alignment="BOTTOM_CENTER" />
+                    </children>
+                </StackPane>
+            </children>
+        </GridPane>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="backButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#handleBackButton" text="Back" translateX="50.0" />
+                <TextField fx:id="levelName" translateX="175.0" />
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" translateX="300.0" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

@@ -1,10 +1,6 @@
 package View.Console;
 
 import Model.Game;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -15,11 +11,11 @@ public class Main {
 
     public static void RunConsoleApp(){
         Game gs = new Game(8,new Point(2,2),new Point(5,5));
-        gs.SetWall(new Point(2,5),new Point(2,6));
-        gs.SetWall(new Point(7,2),new Point(7,3));
+        gs.setWall(new Point(2,5),new Point(2,6));
+        gs.setWall(new Point(7,2),new Point(7,3));
 
-        gs.SetWall(new Point(4,3),new Point(5,3));
-        gs.SetWall(new Point(5,5),new Point(5,6));
+        gs.setWall(new Point(4,3),new Point(5,3));
+        gs.setWall(new Point(5,5),new Point(5,6));
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String inputBuffer ="";

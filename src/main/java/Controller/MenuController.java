@@ -1,6 +1,7 @@
 package Controller;
 
 import View.GUI.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -32,6 +33,13 @@ public class MenuController {
     public void handleStartButton() throws IOException {
         Stage stage = (Stage)this.startButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/levelSelector.fxml"));
+        stage.setScene(new Scene(root,640,670));
+    }
+
+
+    public void handleLevelEditorButton() throws IOException {
+        Stage stage = (Stage)this.startButton.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/levelEditor.fxml"));
         stage.setScene(new Scene(root,640,670));
     }
 }
