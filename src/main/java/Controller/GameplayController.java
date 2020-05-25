@@ -1,6 +1,5 @@
 package Controller;
 
-import Dao.GameDao;
 import Dao.PlayerDao;
 import Dao.SavedGame;
 import Model.Game;
@@ -13,14 +12,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import lombok.Setter;
-
+import org.tinylog.Logger;
 import java.io.IOException;
 
 
@@ -101,16 +99,17 @@ public class GameplayController {
             this.saveScore();
             this.loadLevelComplete();
         }
+        Logger.trace("Gameplay updated");
     }
 
     private void saveScore() {
         PlayerDao pd = new PlayerDao();
-        // TODO: 2020. 05. 25. handle this properly
         try {
             pd.SaveScore(playerName.getText(),levelName,game.getScore());
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.error(e);
         }
+        Logger.info("Score saved");
     }
 
     private void loadLevelComplete(){
@@ -121,21 +120,30 @@ public class GameplayController {
 
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/levelComplete.fxml"));
         Parent root = null;
-        // TODO: 2020. 05. 25. handle this properly
+
         try {
             root = fxmlLoader.load();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.error(e);
         }
         fxmlLoader.<LevelCompleteController>getController().setScore(game.getScore());
         stage.setScene(new Scene(root,600,600));
+        Logger.info("Entered Level complete screen");
     }
 
 
-    public void handleBackButton(ActionEvent actionEvent) throws IOException {
+    public void handleBackButton(ActionEvent actionEvent) {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/menu.fxml"));
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/menu.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            Logger.error(e);
+        }
         stage.setScene(new Scene(root,600,600));
+        Logger.info("Entered main menu");
     }
 
     public void handleKeyPress(KeyEvent keyEvent) {
@@ -154,7 +162,6 @@ public class GameplayController {
 
         this.Update();
     }
-
 
     public void SetPlayerName(String name) {
         this.playerName.setText(name);

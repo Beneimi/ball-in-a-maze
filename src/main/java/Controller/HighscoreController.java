@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 
@@ -25,6 +26,8 @@ public class HighscoreController {
     public ComboBox<String> playerSelector;
     @FXML
     public ListView<String> scoreTable;
+
+    private FXMLLoader fxmlLoader;
 
 
     public void initialize(){
@@ -43,10 +46,18 @@ public class HighscoreController {
 
     }
 
-    public void handleBackButton() throws IOException {
+    public void handleBackButton() {
         Stage stage = (Stage)this.backButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/menu.fxml"));
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/menu.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            Logger.error(e);
+        }
         stage.setScene(new Scene(root,600,600));
+        Logger.info("Entered main menu");
     }
 
 
@@ -58,8 +69,8 @@ public class HighscoreController {
 
         try {
             highscores = pd.getHighscoresOf(playerSelector.getSelectionModel().getSelectedItem());
-        }catch (IllegalArgumentException ex){
-            System.out.println("Ooops, cant load scores for this user =(");
+        }catch (IllegalArgumentException | IOException e){
+            Logger.error(e);
         }
 
         for (Highscore hs : highscores){
@@ -68,5 +79,6 @@ public class HighscoreController {
 
         scoreTable.setItems(scores);
         scoreTable.refresh();
+        Logger.info("Scores listed for the player: "+playerSelector.getSelectionModel().getSelectedItem());
     }
 }

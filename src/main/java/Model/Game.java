@@ -32,7 +32,7 @@ public class Game {
         if(ballPosition.getX() < this.board.getSize() && ballPosition.getX() < this.board.getSize()){
             this.ballPosition = ballPosition;
         }else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid ball position");
         }
     }
 
@@ -65,7 +65,7 @@ public class Game {
                 this.board.getTile(tile1).setLeft(true);
                 this.board.getTile(tile2).setRight(true);
             }else{
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Invalid tiles");
             }
         }else if(tile1.y == tile2.y){
             if ( tile2.x -1 == tile1.x ){
@@ -76,11 +76,11 @@ public class Game {
                 this.board.getTile(tile2).setDown(true);
                 this.board.getTile(tile1).setUp(true);
             }else{
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Invalid tiles");
             }
         }
         else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid tiles");
         }
     }
 

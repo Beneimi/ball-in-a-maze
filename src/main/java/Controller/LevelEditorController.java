@@ -20,6 +20,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import org.tinylog.Logger;
 
 import java.awt.Point;
 import java.io.IOException;
@@ -31,12 +32,13 @@ public class LevelEditorController {
     @FXML
     GridPane grid;
 
-    Popup popup = new Popup();
+    private FXMLLoader fxmlLoader;
 
-    private Game game = new Game(8,new Point(0,0),new Point(7,7));
+    private Game game;
     private Node selected;
 
     public void initialize(){
+        this.game = new Game(8,new Point(0,0),new Point(7,7));
         this.Update();
     }
 
@@ -47,7 +49,6 @@ public class LevelEditorController {
             selected.setStyle("-fx-background-color: gray");
         }
         else {
-            // TODO: 2020. 05. 24. fix popup
             if(selected == clickedNode){
                 game.setGoal(GridPane.getRowIndex(selected),GridPane.getColumnIndex(selected));
             }
@@ -55,9 +56,8 @@ public class LevelEditorController {
                 try {
                     game.setWall(new Point(GridPane.getRowIndex(selected), GridPane.getColumnIndex(selected)),
                             new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
-                }catch (IllegalArgumentException ex){
-                    popup.getContent().add(new Label("Can't place a wall like that"));
-                    popup.show(levelName.getScene().getWindow());
+                }catch (IllegalArgumentException e){
+                    Logger.error(e);
                 }
             }
             selected = null;
@@ -67,11 +67,10 @@ public class LevelEditorController {
 
     private void handleRightClick(MouseEvent mouseEvent){
         Node clickedNode = mouseEvent.getPickResult().getIntersectedNode();
-        // TODO: 2020. 05. 25. handle exception properly
         try {
             game.setBallPosition(new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
-        }catch (IllegalArgumentException ex){
-            System.out.println("invalid tile");
+        }catch (IllegalArgumentException e){
+            Logger.error(e);
         }
         Update();
     }
@@ -131,28 +130,28 @@ public class LevelEditorController {
         }
     }
 
-    public void handleBackButton(ActionEvent actionEvent) throws IOException {
+    public void handleBackButton(ActionEvent actionEvent){
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/menu.fxml"));
+        fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/menu.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            Logger.error(e);
+        }
         stage.setScene(new Scene(root,600,600));
     }
 
     public void handleSaveButton(ActionEvent actionEvent) {
         GameDao gd = new GameDao();
-
-        // TODO: 2020. 05. 24. handle exception properly 
         try {
             gd.SaveGame(this.levelName.getText(),this.game);
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.error(e);
         }
+        handleBackButton(actionEvent);
 
-        // TODO: 2020. 05. 25. handle this
-        try {
-            handleBackButton(actionEvent);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

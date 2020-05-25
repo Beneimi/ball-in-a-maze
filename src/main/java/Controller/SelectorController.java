@@ -3,8 +3,6 @@ package Controller;
 import Dao.GameDao;
 import Dao.PlayerDao;
 import Dao.SavedGame;
-
-
 import Model.Player;
 import com.github.javafaker.Faker;
 import javafx.collections.FXCollections;
@@ -16,11 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+import org.tinylog.Logger;
 import java.io.IOException;
-import java.util.Locale;
 
 public class SelectorController {
 
@@ -43,8 +39,8 @@ public class SelectorController {
 
         try {
             savedGames = gd.GetGames();
-        }catch (IOException ex){
-            System.out.println("Ooops, cant load levels =(");
+        }catch (IOException e ){
+            Logger.error(e);
         }
 
         for (SavedGame sg: savedGames){
@@ -64,8 +60,8 @@ public class SelectorController {
         Player[] players = new Player[]{};
         try {
             players = pd.GetPlayers();
-        }catch (IOException ex){
-            System.out.println("Ooops, cant load players =(");
+        }catch (IOException e ){
+            Logger.error(e);
         }
         for (Player p : players){
             playerNames.add(p.getName());
@@ -74,12 +70,17 @@ public class SelectorController {
 
     }
 
-    public void handleStartButton() throws IOException {
+    public void handleStartButton() {
 
         if(levelList.getSelectionModel().getSelectedItem() != null){
             fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/gameplay.fxml"));
-            Parent root = fxmlLoader.load();
+            Parent root = null;
+            try {
+                root = fxmlLoader.load();
+            } catch (IOException e) {
+                Logger.error(e);
+            }
 
             for (SavedGame sg: savedGames){
                 if(sg.getName() == levelList.getSelectionModel().getSelectedItem()){
