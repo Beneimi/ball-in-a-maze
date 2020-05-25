@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -34,28 +36,49 @@ public class LevelEditorController {
     private Game game = new Game(8,new Point(0,0),new Point(7,7));
     private Node selected;
 
-
-    public void handleMouseClick(MouseEvent mouseEvent) {
+    private void handleLeftClick(MouseEvent mouseEvent){
         Node clickedNode = mouseEvent.getPickResult().getIntersectedNode();
         if (selected == null){
             selected = clickedNode;
             selected.setStyle("-fx-background-color: gray");
         }
         else {
-            // TODO: 2020. 05. 24. fix popup 
-            try {
-                game.setWall(new Point(GridPane.getRowIndex(selected), GridPane.getColumnIndex(selected)),
-                        new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
-            }catch (IllegalArgumentException ex){
-                popup.getContent().add(new Label("Can't place a wall like that"));
-                popup.show(levelName.getScene().getWindow());
+            // TODO: 2020. 05. 24. fix popup
+            if(selected == clickedNode){
+                game.setGoal(GridPane.getRowIndex(selected),GridPane.getColumnIndex(selected));
             }
-
-
-            selected.setStyle("-fx-background-color: white");
+            else {
+                try {
+                    game.setWall(new Point(GridPane.getRowIndex(selected), GridPane.getColumnIndex(selected)),
+                            new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
+                }catch (IllegalArgumentException ex){
+                    popup.getContent().add(new Label("Can't place a wall like that"));
+                    popup.show(levelName.getScene().getWindow());
+                }
+            }
             selected = null;
             this.Update();
         }
+    }
+
+    private void handleRightClick(MouseEvent mouseEvent){
+        Node clickedNode = mouseEvent.getPickResult().getIntersectedNode();
+        // TODO: 2020. 05. 25. handle exception properly
+        try {
+            game.setBallPosition(new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
+        }catch (IllegalArgumentException ex){
+            System.out.println("invalid tile");
+        }
+        Update();
+    }
+
+    public void handleMouseClick(MouseEvent mouseEvent) {
+        if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
+            handleLeftClick(mouseEvent);
+        }else {
+            handleRightClick(mouseEvent);
+        }
+
     }
 
     public void Update(){
@@ -120,5 +143,6 @@ public class LevelEditorController {
             e.printStackTrace();
         }
     }
+
 }
 

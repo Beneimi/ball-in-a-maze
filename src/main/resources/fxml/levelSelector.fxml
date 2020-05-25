@@ -8,7 +8,20 @@
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/levelSelector.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SelectorController">
     <children>
       <ListView fx:id="levelList" prefHeight="514.0" prefWidth="580.0" />
-      <Button fx:id="start" onAction="#handleStartButton" mnemonicParsing="false" text="start" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="start" mnemonicParsing="false" onAction="#handleStartButton" text="start">
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </Button>
+            <ComboBox fx:id="playerName" editable="true" promptText="Enter your name">
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+      </HBox>
     </children>
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -1,9 +1,12 @@
 package Controller;
 
 import Dao.GameDao;
+import Dao.PlayerDao;
 import Dao.SavedGame;
 
 
+import Model.Player;
+import com.github.javafaker.Faker;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,10 +14,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class SelectorController {
 
@@ -22,6 +28,9 @@ public class SelectorController {
     public Button start;
     @FXML
     public ListView<String> levelList;
+
+    @FXML
+    public ComboBox<String> playerName;
 
     private FXMLLoader fxmlLoader;
 
@@ -45,6 +54,24 @@ public class SelectorController {
         levelList.setItems(levelNames);
         levelList.getSelectionModel().select(0);
         levelList.refresh();
+
+        this.loadPlayerNames();
+    }
+
+    private void loadPlayerNames() {
+        PlayerDao pd = new PlayerDao();
+        ObservableList<String> playerNames = FXCollections.observableArrayList();
+        Player[] players = new Player[]{};
+        try {
+            players = pd.GetPlayers();
+        }catch (IOException ex){
+            System.out.println("Ooops, cant load players =(");
+        }
+        for (Player p : players){
+            playerNames.add(p.getName());
+        }
+        playerName.setItems(playerNames);
+
     }
 
     public void handleStartButton() throws IOException {
@@ -56,8 +83,8 @@ public class SelectorController {
 
             for (SavedGame sg: savedGames){
                 if(sg.getName() == levelList.getSelectionModel().getSelectedItem()){
-                    fxmlLoader.<GameplayController>getController().SetGame(sg.getGame());
-                    fxmlLoader.<GameplayController>getController().SetName(sg.getName());
+                    fxmlLoader.<GameplayController>getController().SetGame(sg);
+                    fxmlLoader.<GameplayController>getController().SetPlayerName(getPlayerName());
                 }
             }
 
@@ -67,6 +94,14 @@ public class SelectorController {
         }
 
 
+    }
+
+    private String getPlayerName(){
+        if(this.playerName.getSelectionModel().isEmpty()){
+            Faker faker = new Faker();
+            return faker.funnyName().name();
+        }
+        return playerName.getSelectionModel().getSelectedItem();
     }
 
 }

@@ -1,6 +1,8 @@
 package Controller;
 
 import Dao.GameDao;
+import Dao.PlayerDao;
+import Dao.SavedGame;
 import Model.Game;
 import Model.Tile;
 import javafx.event.ActionEvent;
@@ -10,6 +12,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -27,13 +30,23 @@ public class GameplayController {
     public GridPane grid;
 
     @FXML
-    public TextField levelName;
+    public Label playerName;
+
+    @FXML
+    public Label score;
 
     @Setter
     private Game game;
 
-    public void SetGame(Game game){
-        this.game = game;
+    private String levelName;
+
+
+    private FXMLLoader fxmlLoader;
+
+    public void SetGame(SavedGame savedGame){
+        this.game = savedGame.getGame();
+        this.levelName = savedGame.getName();
+        score.setText("Moves: " + game.getScore() );
         Update();
     }
 
@@ -82,21 +95,39 @@ public class GameplayController {
             }
         }
 
+        score.setText("Moves: " + game.getScore() );
+
         if(this.game.GoalReached()){
+            this.saveScore();
             this.loadLevelComplete();
+        }
+    }
+
+    private void saveScore() {
+        PlayerDao pd = new PlayerDao();
+        // TODO: 2020. 05. 25. handle this properly
+        try {
+            pd.SaveScore(playerName.getText(),levelName,game.getScore());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     private void loadLevelComplete(){
 
-        Stage stage = (Stage) levelName.getScene().getWindow();
+        Stage stage = (Stage) grid.getScene().getWindow();
+
+        fxmlLoader = new FXMLLoader();
+
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml/levelComplete.fxml"));
         Parent root = null;
-        // TODO: 2020. 05. 24. properly handle exception
+        // TODO: 2020. 05. 25. handle this properly
         try {
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/levelComplete.fxml"));
+            root = fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        fxmlLoader.<LevelCompleteController>getController().setScore(game.getScore());
         stage.setScene(new Scene(root,600,600));
     }
 
@@ -124,17 +155,8 @@ public class GameplayController {
         this.Update();
     }
 
-    public void handleSaveButton(ActionEvent actionEvent) {
-        GameDao gd = new GameDao();
 
-        try {
-            gd.SaveGame(this.levelName.getText(),this.game);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void SetName(String name) {
-        this.levelName.setText(name);
+    public void SetPlayerName(String name) {
+        this.playerName.setText(name);
     }
 }

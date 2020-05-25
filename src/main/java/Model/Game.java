@@ -2,6 +2,7 @@ package Model;
 
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.awt.*;
 
@@ -22,12 +23,28 @@ public class Game {
     private Board board;
 
     @Getter
+    private int score;
+
+    @Getter
     private Point ballPosition;
+
+    public void setBallPosition(Point ballPosition) throws IllegalArgumentException {
+        if(ballPosition.getX() < this.board.getSize() && ballPosition.getX() < this.board.getSize()){
+            this.ballPosition = ballPosition;
+        }else {
+            throw new IllegalArgumentException();
+        }
+    }
 
     public Game(int size, Point start, Point goal){
         this.board = new Board(size,goal);
         this.ballPosition = start;
     }
+
+    public void setGoal(int x, int y){
+        this.getBoard().setGoal(new Point(x,y));
+    }
+
 
     /***
      * Sets up a wall between the given tiles.
@@ -73,7 +90,6 @@ public class Game {
      * @return The new position of the ball
      */
     public Point MoveBall(DIRECTION dir){
-
         switch (dir) {
             case UP:
                 while (!this.board.getTile(ballPosition).isWall(dir)){
@@ -96,6 +112,7 @@ public class Game {
                 }
                 break;
         }
+        this.score++;
         return this.ballPosition;
     }
 

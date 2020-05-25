@@ -8,9 +8,14 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/levelCompleteStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LevelCompleteController">
     <children>
-      <Label text="Level Complete">
+      <Label text="Level Completed">
          <font>
             <Font size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="scoreLabel" text="in moves">
+         <font>
+            <Font size="35.0" />
          </font>
       </Label>
         <Button fx:id="backButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#handleBackButton" scaleX="2.0" scaleY="2.0" styleClass="menuItem" text="Back to Menu" translateY="-20.0">

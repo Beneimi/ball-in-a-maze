@@ -13,6 +13,8 @@ public class Board {
     @Getter
     private int size;
 
+    private Tile goal;
+
     public Board(int size, Point goal){
         this.board = new Tile[size][size];
         for (int i = 0; i<size; i++){
@@ -34,6 +36,13 @@ public class Board {
         }
         this.size = size;
         this.board[goal.x][goal.y].setGoal(true);
+        this.goal = this.board[goal.x][goal.y];
+    }
+
+    public void setGoal(Point goal) {
+        this.goal.setGoal(false);
+        this.goal = this.getTile(goal);
+        this.goal.setGoal(true);
     }
 
     public Tile getTile(Point p){

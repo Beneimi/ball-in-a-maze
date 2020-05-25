@@ -14,8 +14,6 @@ public class Tile {
     private boolean down = false;
     private boolean left = false;
     private boolean right = false;
-
-    @Getter
     private boolean goal = false;
 
     /***
