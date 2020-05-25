@@ -85,11 +85,11 @@ public class GameplayController {
             }
 
             if(t.isGoal()){
-                sp.setStyle("-fx-background-color: chocolate");
+                sp.setStyle("-fx-background-color: darkgreen");
             }
             else if(GridPane.getRowIndex(sp) == game.getBallPosition().x
                     && GridPane.getColumnIndex(sp) == game.getBallPosition().y){
-                sp.setStyle("-fx-background-color: coral");
+                sp.setStyle("-fx-background-color: deepskyblue");
             }else {
                 sp.setStyle("-fx-background-color: white");
             }
