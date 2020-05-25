@@ -39,6 +39,10 @@ public class Board {
         this.goal = this.board[goal.x][goal.y];
     }
 
+    /***
+     * Sets the goal of the board
+     * @param goal the new goal
+     */
     public void setGoal(Point goal) {
         this.goal.setGoal(false);
         this.goal = this.getTile(goal);

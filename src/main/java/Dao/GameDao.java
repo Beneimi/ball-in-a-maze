@@ -4,18 +4,31 @@ import Model.Game;
 import com.google.gson.Gson;
 import org.apache.commons.lang3.ArrayUtils;
 import org.tinylog.Logger;
-
 import java.io.*;
 import java.util.stream.Collectors;
 
+/***
+ * Class for accessing game data
+ */
 public class GameDao {
 
     private Gson gson = new Gson();
 
+    /***
+     * Loads saved games from disk
+     * @return saved games
+     * @throws IOException thrown when the file is not accessible
+     */
     public SavedGame[] GetGames() throws IOException {
         return gson.fromJson( ReadFile(), SavedGame[].class);
     }
 
+    /***
+     * Saves a game to disk
+     * @param name name of the game
+     * @param game the <code>Game</code> to be saved
+     * @throws IOException thrown when the file is not accessible
+     */
     public void SaveGame(String name, Game game) throws IOException {
         SavedGame[] savedGames = GetGames();
         WriteFile( gson.toJson(ArrayUtils.add(savedGames,new SavedGame(game,name))) );

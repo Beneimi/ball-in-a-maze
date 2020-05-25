@@ -8,6 +8,9 @@ import org.tinylog.Logger;
 import java.io.*;
 import java.util.stream.Collectors;
 
+/***
+ * Class for accessing player data
+ */
 public class PlayerDao {
 
     private Gson gson = new Gson();
@@ -16,6 +19,13 @@ public class PlayerDao {
         return gson.fromJson( ReadFile(), Player[].class);
     }
 
+    /***
+     * Saves score to disk
+     * @param playerName name of the player
+     * @param levelName name of the level
+     * @param score score to be saved
+     * @throws IOException thrown when the file is not accessible
+     */
     public void SaveScore(String playerName, String levelName, int score) throws IOException {
         Player[] players = GetPlayers();
         for (Player player: players) {
@@ -30,6 +40,11 @@ public class PlayerDao {
         Logger.info("Score saved");
     }
 
+    /***
+     * Loads <code>Highscore</code>s of a <code>Player</code> from disk
+     * @return the saved highscores
+     * @throws IOException thrown when the file is not accessible
+     */
     public Highscore[] getHighscoresOf(String playerName) throws IOException,IllegalArgumentException{
         Player[] players = this.GetPlayers();
         for (Player p: players) {

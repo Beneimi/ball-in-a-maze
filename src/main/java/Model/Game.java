@@ -1,17 +1,16 @@
 package Model;
 
-
 import lombok.Getter;
-import lombok.Setter;
-
-import java.awt.*;
-
+import java.awt.Point;
 
 /***
  * Class that represents a gamestate.
  */
 public class Game {
 
+    /***
+     * Directions in which the ball can be moved
+     */
     public enum DIRECTION{
         LEFT,
         RIGHT,
@@ -28,21 +27,36 @@ public class Game {
     @Getter
     private Point ballPosition;
 
-    public void setBallPosition(Point ballPosition) throws IllegalArgumentException {
-        if(ballPosition.getX() < this.board.getSize() && ballPosition.getX() < this.board.getSize()){
-            this.ballPosition = ballPosition;
-        }else {
-            throw new IllegalArgumentException("Invalid ball position");
-        }
-    }
-
     public Game(int size, Point start, Point goal){
         this.board = new Board(size,goal);
         this.ballPosition = start;
     }
 
+    /***
+     * Sets the goal to the given coordinates
+     * @param x the x value of the coordinate
+     * @param y the y value of the coordinate
+     * @throws IllegalArgumentException thrown when the given coordinates are invalid
+     */
     public void setGoal(int x, int y){
-        this.getBoard().setGoal(new Point(x,y));
+        if(x < this.board.getSize() && y < this.board.getSize() && x >= 0 && y >= 0){
+            this.getBoard().setGoal(new Point(x,y));
+        }else {
+            throw new IllegalArgumentException("Invalid ball position");
+        }
+    }
+    /***
+     * Sets the current position of the ball to the given coordinates
+     * @param x the x value of the coordinate
+     * @param y the y value of the coordinate
+     * @throws IllegalArgumentException thrown when the given coordinates are invalid
+     */
+    public void setBallPosition(int x, int y) throws IllegalArgumentException {
+        if(x < this.board.getSize() && y < this.board.getSize() && x >= 0 && y >= 0){
+            this.ballPosition = new Point(x, y);
+        }else {
+            throw new IllegalArgumentException("Invalid ball position");
+        }
     }
 
 

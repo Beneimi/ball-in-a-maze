@@ -61,4 +61,22 @@ class GameTest {
         g.MoveBall(Game.DIRECTION.DOWN);
         assertTrue(!g.GoalReached());
     }
+
+    @Test
+    void TestsetBallPosition() {
+        Game g = new Game(8,new Point(0,0),new Point(2,2));
+        assertThrows( IllegalArgumentException.class ,() -> g.setBallPosition(12,12));
+        assertThrows( IllegalArgumentException.class ,() -> g.setBallPosition(-6,4));
+        assertThrows( IllegalArgumentException.class ,() -> g.setBallPosition(-2,-9));
+        assertThrows( IllegalArgumentException.class ,() -> g.setBallPosition(3,-5));
+    }
+
+    @Test
+    void TestsetGoal() {
+        Game g = new Game(8,new Point(0,0),new Point(2,2));
+        assertThrows( IllegalArgumentException.class ,() -> g.setGoal(12,12));
+        assertThrows( IllegalArgumentException.class ,() -> g.setGoal(-6,4));
+        assertThrows( IllegalArgumentException.class ,() -> g.setGoal(-2,-9));
+        assertThrows( IllegalArgumentException.class ,() -> g.setGoal(3,-5));
+    }
 }
