@@ -1,6 +1,5 @@
-package View.GUI;
+package View.Main;
 
-import Dao.SavedGame;
 import Model.Game;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,13 +14,6 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        //GameDao gd =new GameDao();
-        //gd.SaveGame(activeGame);
-
-        //Gson gson = new Gson();
-
-        //System.out.println( gson.toJson(activeGame) );
-
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/menu.fxml"));
         stage.setScene(new Scene(root,600,600));
         stage.show();
