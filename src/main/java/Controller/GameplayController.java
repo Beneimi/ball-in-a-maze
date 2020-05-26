@@ -5,6 +5,7 @@ import Dao.SavedGame;
 import Model.Game;
 import Model.Tile;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -40,6 +41,7 @@ public class GameplayController {
 
 
     private FXMLLoader fxmlLoader;
+
 
     public void SetGame(SavedGame savedGame){
         this.game = savedGame.getGame();
@@ -147,7 +149,8 @@ public class GameplayController {
     }
 
     public void handleKeyPress(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.S){
+        System.out.println(keyEvent.getCode());
+        if (keyEvent.getCode().equals(KeyCode.S)){
             game.MoveBall(Game.DIRECTION.DOWN);
         }
         if (keyEvent.getCode() == KeyCode.W){
@@ -160,7 +163,7 @@ public class GameplayController {
             game.MoveBall(Game.DIRECTION.RIGHT);
         }
 
-        this.Update();
+        Update();
     }
 
     public void SetPlayerName(String name) {
