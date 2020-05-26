@@ -57,7 +57,7 @@ public class PlayerDao {
 
 
     private String ReadFile() throws IOException{
-        try (BufferedReader reader = new BufferedReader(new FileReader(getClass().getResource("/players/players.json").getFile()))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(getClass().getResource("/players.json").getFile()))) {
             return reader.lines().collect(Collectors.joining());
         } catch (IOException e) {
             throw new IOException("Can not read player data");
@@ -65,7 +65,7 @@ public class PlayerDao {
     }
 
     private void WriteFile(String content) throws IOException{
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(getClass().getResource("/players/players.json").getFile()))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(getClass().getResource("/players.json").getFile()))) {
             writer.write(content);
         } catch (IOException e) {
             throw new IOException("Can not write player data");

@@ -1,9 +1,7 @@
 package Model;
 
 import org.junit.jupiter.api.Test;
-
-import java.awt.*;
-
+import java.awt.Point;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
@@ -26,8 +24,6 @@ class GameTest {
         g.setWall(new Point(1,2),new Point(1,1));
 
         assertTrue(g.getTile(1,2).isLeft() && g.getTile(1,1).isRight());
-
-
 
         assertThrows(IllegalArgumentException.class, () -> g.setWall(new Point(1,1),new Point(2,2)));
         assertThrows(IllegalArgumentException.class, () -> g.setWall(new Point(9,9),new Point(3,3)));

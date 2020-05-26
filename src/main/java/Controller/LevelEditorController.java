@@ -10,15 +10,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
@@ -68,7 +64,7 @@ public class LevelEditorController {
     private void handleRightClick(MouseEvent mouseEvent){
         Node clickedNode = mouseEvent.getPickResult().getIntersectedNode();
         try {
-            game.setBallPosition(new Point(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode)));
+            game.setBallPosition(GridPane.getRowIndex(clickedNode), GridPane.getColumnIndex(clickedNode));
         }catch (IllegalArgumentException e){
             Logger.error(e);
         }

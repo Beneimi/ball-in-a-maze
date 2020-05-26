@@ -37,7 +37,7 @@ public class GameDao {
 
 
     private String ReadFile() throws IOException{
-        try (BufferedReader reader = new BufferedReader(new FileReader(getClass().getResource("/savedGames/saved.json").getFile()))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(getClass().getResource("/savedGames.json").getFile()))) {
             return reader.lines().collect(Collectors.joining());
         } catch (IOException e) {
             throw new IOException("Can not read level data");
@@ -45,7 +45,7 @@ public class GameDao {
     }
 
     private void WriteFile(String content) throws IOException{
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(getClass().getResource("/savedGames/saved.json").getFile()))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(getClass().getResource("/savedGames.json").getFile()))) {
             writer.write(content);
         } catch (IOException e) {
             throw new IOException("Can not write level data");
